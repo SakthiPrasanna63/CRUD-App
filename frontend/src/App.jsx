@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Home from './Home'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import AddUser from './AddUser'
-import UpdateUser from './updateUser'
+import UpdateUser from './UpdateUser'
 
 
 function App() {
