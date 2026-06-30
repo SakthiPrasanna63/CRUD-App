@@ -9,7 +9,10 @@ require('dotenv').config();
 dns.setServers(["1.1.1.1","8.8.8.8"])
 
 const app=express()
-app.use(cors())
+
+const allowedOrgins =[process.env.VITE_APPLICATION_URL]
+
+app.use(cors({origin:allowedOrgins,credentials: true}))
 app.use(express.json())
 
 const port=process.env.PORT || 3001

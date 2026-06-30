@@ -3,8 +3,6 @@ import Home from './Home'
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 import AddUser from './AddUser'
 import UpdateUser from './updateUser'
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -20,8 +18,6 @@ function App() {
     </Routes>
     </BrowserRouter>
     </div>
-
-    <ToastContainer />
 
     </>
   )
