@@ -3,6 +3,7 @@ const mongoose=require('mongoose')
 const cors=require('cors')
 const UserModel=require('./models/Users.js')
 const dns =require('dns')
+const { METHODS } = require('http')
 require('dotenv').config();
 
 
@@ -10,9 +11,12 @@ dns.setServers(["1.1.1.1","8.8.8.8"])
 
 const app=express()
 
-const allowedOrgins =[process.env.VITE_APPLICATION_URL]
+const allowedOrgins ={
+  origin: process.env.VITE_APPLICATION_URL,
+  methods:'GET,PUT,POST,DELETE'
+};
 
-app.use(cors({origin:allowedOrgins,credentials: true}))
+app.use(cors({allowedOrgins,credentials: true}))
 app.use(express.json())
 
 const port=process.env.PORT || 3001
