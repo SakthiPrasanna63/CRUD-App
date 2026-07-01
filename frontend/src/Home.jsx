@@ -44,7 +44,7 @@ function Home() {
         </thead>
 
         <tbody>
-          {users.map((user) => (
+          {Array.isArray(users) ? users.map((user) => (
             <tr key={user._id}>
               <td>{user.name}</td>
               <td>{user.email}</td>
@@ -56,7 +56,7 @@ function Home() {
                 <Button variant="danger" size="sm" onClick={(e)=>handleDelete(user._id)}> Delete </Button>
               </td>
             </tr>
-          ))}
+          )):null}
         </tbody>
       </Table>
     </Container>
